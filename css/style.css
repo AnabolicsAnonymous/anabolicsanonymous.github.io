@@ -1,0 +1,231 @@
+@import url('http://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    cursor: default;
+}
+
+.main {
+    width: 450px;
+    padding: 25px;
+    text-align: right;
+    color: #f7f7f7eb;
+    letter-spacing: 1px;
+    z-index: 9999;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.top a {
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #fff;
+}
+
+.top a:hover {
+    font-size: 22px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a i {
+    font-size: 1em;
+}
+
+.small {
+    color: #e8e8e899;
+    font-size: 0.9rem;
+}
+
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    color: #fff;
+}
+
+.after {
+    display: none;
+}
+
+.before {
+    text-align: center;
+    color: #fff;
+    user-select: none;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 25px;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 10000;
+    width: 450px;
+    min-width: unset;
+    max-width: unset;
+}
+
+.player-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 0;
+}
+
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.progress-bar {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.song-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        padding: 12px 20px;
+        gap: 15px;
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        padding: 10px 15px;
+        gap: 10px;
+        bottom: 10px;
+        border-radius: 20px;
+        min-width: 240px;
+    }
+    
+    .control-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .song-title {
+        font-size: 13px;
+        max-width: 50vw;
+    }
+}
+
+@media (max-width: 360px) {
+    .music-player {
+        padding: 8px 12px;
+        min-width: 220px;
+    }
+    
+    .song-title {
+        font-size: 12px;
+    }
+    
+    @keyframes marquee {
+        0% { transform: translateX(20%); }
+        100% { transform: translateX(-120%); }
+    }
+}
